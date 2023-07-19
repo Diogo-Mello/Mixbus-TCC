@@ -1,0 +1,62 @@
+<ion-menu contentId="main-content" color="light">
+
+  <ion-header color="light">
+    <ion-toolbar class="logoMenu" color="light">
+      <img src="./assets/images/logoExtendida.svg">
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content class="options">
+
+    <ion-list lines="full" class="list">
+      
+      <ion-item button (click)="irParaConfiguracoes()" > 
+        <ion-icon name="cog"></ion-icon>
+        <ion-label>CONFIGURAÇÕES</ion-label>
+      </ion-item>
+
+      <ion-item button (click)="irParaSuporte()" >
+        <ion-icon name="help-circle"></ion-icon>
+        <ion-label>SUPORTE</ion-label>
+      </ion-item>
+
+      <ion-item button (click)="irParaSobre()">
+        <ion-icon name="information-circle"></ion-icon>
+        <ion-label>SOBRE</ion-label>
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar >
+
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+        <!-- <ion-searchbar ></ion-searchbar> -->
+        <ion-title>MIXBUS</ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-tabs>
+    <ion-tab-bar slot="bottom" >
+      <ion-tab-button tab="tab1">
+        <ion-icon aria-hidden="true" name="home"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab2">
+        <ion-icon aria-hidden="true" name="bus"></ion-icon>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="tab3">
+        <ion-icon aria-hidden="true" name="person"></ion-icon>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</div>
+

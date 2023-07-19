@@ -1,0 +1,8 @@
+body {
+    background-color: #144272;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}

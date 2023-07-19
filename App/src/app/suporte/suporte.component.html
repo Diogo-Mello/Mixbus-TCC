@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToHomePage()"><ion-icon name="arrow-back-sharp"></ion-icon></ion-button>
+    </ion-buttons>
+    <ion-title>Suporte</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding" *ngIf="!usuario">
+  <h2>Você precisa fazer login para ter acesso ao suporte.</h2>
+</ion-content>
+
+<ion-content class="ion-padding ion-text-center" *ngIf="usuario">
+  <ion-button id="modalSuporte" expand="block">Fazer pedido</ion-button>
+  <ion-list *ngFor="let suporte of suportes" class="ion-margin-top">
+    <p class="ion-text-wrap">Suporte: {{suporte['descricao']}}</p>
+    <p class="ion-text-wrap">Resposta: {{suporte['resposta']}}</p>
+    <p class="ion-text-wrap">Status: {{suporte['status'] == 0 ? 'Em andamento' : "Resolvido"}}</p>
+  </ion-list>
+</ion-content>
+
+<ion-modal trigger="modalSuporte">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-button (click)="cancel()">Cancelar</ion-button>
+        </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button (click)="confirm()" [strong]="true">Confirmar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-item>
+        <ion-label position="stacked">Descreva seu problema</ion-label>
+        <ion-input type="text" placeholder="descrição" [(ngModel)]="suporteDescricao"></ion-input>
+      </ion-item>
+    </ion-content>
+  </ng-template>
+</ion-modal>

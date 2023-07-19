@@ -1,0 +1,85 @@
+<ion-content [fullscreen]="true">
+
+
+  <ion-card class="card" *ngFor="let card of cards">
+    <ion-card-content class="icon">
+      <img src="{{card.logo}}" alt="">
+    </ion-card-content>
+
+    <div class="info">
+      <ion-card-header class="header">
+        <h4><b>{{card.cidadeIda}} - {{card.cidadeVolta}}</b></h4>
+        <h5><b>R$ {{card.preco}}</b></h5>
+        <ion-button color="secondary" size="small" (click)="abrirHorarios(card.linha)">Ver Mais</ion-button>
+      </ion-card-header>
+    </div>
+  </ion-card>
+</ion-content>
+
+<ion-modal [isOpen]="isModalOpen">
+  <ng-template>
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>LINHA: {{this.linha}}</ion-title>
+        <ion-buttons slot="end">
+          <ion-button (click)="this.isModalOpen=false">Fechar</ion-button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">DIAS ÚTEIS</th>
+          </tr>
+          <tr>
+            <th>{{this.cidadeIda}}</th>
+            <th>{{this.cidadeVolta}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let horarioDiasUteis of horarioDiasUteis">
+            <td>{{horarioDiasUteis.horarioIda}}</td>
+            <td>{{horarioDiasUteis.horarioVolta}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">SÁBADOS</th>
+          </tr>
+          <tr>
+            <th>{{this.cidadeIda}}</th>
+            <th>{{this.cidadeVolta}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let horarioSabado of horarioSabado">
+            <td>{{horarioSabado.horarioIda}}</td>
+            <td>{{horarioSabado.horarioVolta}}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table>
+        <thead>
+          <tr>
+            <th colspan="2">DOMINGOS E FERIADOS</th>
+          </tr>
+          <tr>
+            <th>{{this.cidadeIda}}</th>
+            <th>{{this.cidadeVolta}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let horarioDomingoFeriados of horarioDomingoFeriados">
+            <td>{{horarioDomingoFeriados.horarioIda}}</td>
+            <td>{{horarioDomingoFeriados.horarioVolta}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </ion-content>
+  </ng-template>
+</ion-modal>

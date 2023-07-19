@@ -1,0 +1,27 @@
+.login-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+}
+
+.logo {
+    margin-bottom: 32px;
+}
+
+ion-item {
+    --padding-start: 16px;
+    --padding-end: 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.login-button {
+    margin-top: 32px;
+}
+
+.register-link {
+    margin-top: 32px;
+    text-align: center;
+}

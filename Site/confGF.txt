@@ -1,0 +1,8 @@
+Host: 108.167.188.244
+Banco de Dados: giova725_mixbus
+Usuário: giova725_mixbus
+Senha: Mixbus123tcc@
+
+HOST: ftp.giovanniguarnieri.com.br
+Email FTP: mixbus@mixbus.giovanniguarnieri.com.br
+Senha: Mixbus123tcc@

@@ -1,0 +1,32 @@
+/* Footer Navbar */
+
+
+/* Navbar lateral List */
+
+/* Card tela home */
+#cardFavoritos {
+    --color: #9efff0;
+    position: absolute;
+    top: 3.5rem;
+}
+
+ion-button{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+#subtitle {
+    font-size: xx-large;
+}
+
+ion-content{
+    height: 100%;
+    width: 100%;
+}
+
+#map-container {
+    height: 100%;
+}
+
+/* iOS places the subtitle above the title */

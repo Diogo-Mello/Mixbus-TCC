@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center">MIXBUS MOTORISTAS</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="login-wrapper">
+    <img src="assets/img/logoSimples.svg" alt="Mixbus" class="logo" height="100px">
+    <ion-item>
+      <ion-input type="text" placeholder="Matrícula" [(ngModel)]="matricula"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Senha" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+    <div class="error-message" *ngIf="verificarErro">
+      <ion-icon name="alert-circle"></ion-icon>
+      <span>{{mensagemErro}}</span>
+    </div>
+    <ion-button expand="block" color="success" class="login-button" (click)="login()">Entrar</ion-button>
+    
+  </div>
+</ion-content>

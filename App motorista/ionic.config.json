@@ -1,0 +1,7 @@
+{
+  "name": "mixbusMotoristas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,44 @@
+<ion-content [fullscreen]="true" *ngIf="loginComponent">
+  <div class="login-wrapper">
+    <img src="assets/images/logoSimples.svg" alt="Mixbus" class="logo" height="100px">
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Senha" [(ngModel)]="senha"></ion-input>
+    </ion-item>
+    <div class="error-message" *ngIf="verificarErro">
+      <ion-icon name="alert-circle"></ion-icon>
+      <span>{{mensagemErro}}</span>
+    </div>
+    <ion-button expand="block" color="success" class="login-button" (click)="login()">Entrar</ion-button>
+
+    <p>Ainda não possui uma conta?<span (click)="loginComponent=false" style="color: blue;"> Cadastre-se aqui! </span> </p>
+    
+  </div>
+</ion-content>
+
+<ion-content [fullscreen]="true" *ngIf="!loginComponent">
+  <div class="login-wrapper">
+    <ion-item>
+      <ion-input type="text" placeholder="Nome" [(ngModel)]="cadastroNome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="cadastroEmail"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Senha" [(ngModel)]="cadastroSenha1"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="password" placeholder="Repita a senha" [(ngModel)]="cadastroSenha2"></ion-input>
+    </ion-item>
+    <div class="error-message" *ngIf="verificarErro">
+      <ion-icon name="alert-circle"></ion-icon>
+      <span>{{mensagemErro}}</span>
+    </div>
+    <ion-button expand="block" color="success" class="login-button" (click)="cadastro()">Cadastrar</ion-button>
+
+    <p>Já possui uma conta?<span (click)="loginComponent=true" style="color: blue;"> Faça Login!</span></p>
+    
+  </div>
+</ion-content>

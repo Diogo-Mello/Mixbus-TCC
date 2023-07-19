@@ -1,0 +1,16 @@
+<ion-content>
+    <app-login *ngIf="!usuario"></app-login>
+
+    <div class="user-wrapper" *ngIf="usuario">
+        <img src="assets/images/logoSimples.svg" alt="Mixbus" class="logo" height="100px">
+        <ion-item class="ion-text-center">
+            <p>Olá, {{this.nomeUsuario}}, seja bem vindo ao melhor aplicativo de rastreio e dados sobre transporte
+                público.</p>
+        </ion-item>
+
+        <ion-button expand="block" color="danger" class="login-button" (click)="this.removeName()">
+            Deslogar
+        </ion-button>
+
+    </div>
+</ion-content>

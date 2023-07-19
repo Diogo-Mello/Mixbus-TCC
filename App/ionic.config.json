@@ -1,0 +1,7 @@
+{
+  "name": "mixbus",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

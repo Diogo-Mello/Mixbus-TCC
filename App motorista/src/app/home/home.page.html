@@ -1,0 +1,65 @@
+<ion-content [fullscreen]="true">
+
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar class="ion-padding-vertical">
+        <ion-title size="small">Olá!</ion-title>
+        <ion-title size="large"><b>{{nomeMotorista}}</b></ion-title>
+        <ion-title size="small">{{empresaMotorista}}</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-item button id="listaLateral" (click)="logout()">
+        <ion-icon name="log-out" size="large" color="danger"></ion-icon>
+        <ion-label>SAIR</ion-label>
+      </ion-item>
+    </ion-content>
+  </ion-menu>
+  <div class="ion-page" id="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>MIXBUS MOTORISTAS</ion-title>
+      </ion-toolbar>
+    </ion-header>
+  </div>
+
+
+  <div id="container" *ngIf="!LocalizacaoCompartilhada">
+    <ion-title size="small" class="ion-margin-vertical">Selecione a linha que deseja compartilhar:</ion-title>
+    <ion-item>
+      <ion-select aria-label="linha" label="Linha:" interface="action-sheet" multiple="false" placeholder="Selecione"
+        [(ngModel)]="linhaAtual">
+        <ion-select-option *ngFor="let linha of linhas" [value]="linha">Linha {{ linha.linha }}: {{ linha.cidadeIda }} - {{ linha.cidadeVolta }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <div class="error-message" *ngIf="verificarErro">
+      <ion-icon name="alert-circle"></ion-icon>
+      <span>{{mensagemErro}}</span>
+    </div>
+    <ion-button id="btnConfirmar" class="ion-margin-vertical" color="success" shape="round" (click)="alert1()">
+      Confirmar
+    </ion-button>
+  </div>
+
+  <div id="container" *ngIf="LocalizacaoCompartilhada">
+    <ion-title class="ion-margin-vertical">Você está trabalhando na linha:</ion-title>
+    <ion-title size="large" class="ion-margin-vertical">
+      Linha: {{linhaAtual["linha"]}} <br> {{linhaAtual["nome"]}}
+    </ion-title>
+
+    <ion-title size="large" class="ion-margin-vertical">
+      Latitude: {{localizacao["latitude"]}} <br> Longitude: {{localizacao["longitude"]}}
+    </ion-title>
+    <ion-icon name="alert-circle"></ion-icon>
+    <span>Não feche o app</span>
+    <br>
+
+    
+    <ion-button id="btnConfirmar" class="ion-margin-vertical" color="danger" shape="round" (click)="alert2()">
+      Parar
+    </ion-button>
+  </div>
+</ion-content>

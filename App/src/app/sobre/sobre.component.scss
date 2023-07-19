@@ -1,0 +1,25 @@
+ion-header {
+  ion-toolbar {
+    --background: #3880ff;
+    --color: #fff;
+  }
+
+  ion-title {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+ion-content {
+  
+  h1 {
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+  }
+  
+  p {
+    font-size: 1.2rem; 
+    line-height: 1.5; 
+    margin-bottom: 1rem; 
+  }
+}
